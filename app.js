@@ -69,7 +69,7 @@ const app = () => {
         outline.style.strokeDashoffset = progress
 
         // animate countdown
-        timeDisplay.textContent = `${minutes}:${seconds}`
+        timeDisplay.textContent = `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`
 
         if (currentTime >= initialDuration) {
             song.pause()
