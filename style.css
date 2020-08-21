@@ -35,6 +35,10 @@
     pointer-events: none;
 }
 
+.player-container img:hover {
+    cursor: pointer;
+}
+
 .time-select button,
 .sound-picker button {
     color: white;
@@ -83,7 +87,8 @@
 }
 
 video {
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .time-display {
@@ -91,4 +96,33 @@ video {
     bottom: 10%;
     color: white;
     font-size: 3em;
+}
+
+@media (max-width:630px) {
+    .time-select span {
+        display: none;
+    }
+
+    .player-container {
+        transform: scale(0.7);
+    }
+
+    .sound-picker {
+        transform: scale(0.9);
+    }
+
+    .time-select button {
+        transform: scale(1.2);
+    }
+
+}
+
+@media (max-width: 772px) and (min-width: 631px) {
+    .time-select span {
+        display: none;
+    }
+
+    .time-select button::after {
+        content: "min";
+    }
 }
